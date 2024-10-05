@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css">
+  <title>Abdul's Charity | About Us</title>
+  <nav class="nave_top">
+    <div class="logo">
+      <a href="index.html"><img src="name.jpeg" alt="Logo"></a>
+    </div>
+    <div class="nav_side">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT US</a>
+      <a href="donate.html">DONATE</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
+  </nav>
+
+  <style>
+    
+    /* General Styles */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+
+    /* Navbar Styles */
+    nav.nave_top {
+      background-color: rgba(0, 0, 0, 0.856);
+    z-index: 9;
+    padding-left: 50px;
+    padding-right: 50px;
+    display:flex;
+    box-shadow: 0px 3px 65px 0px rgba(0, 0, 0, 0.856);
+    }
+    nav.nave_top{
+      position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    }
+    nav.nave_top .logo {
+      float:left;
+    width: 10%;
+    }
+    nav.nave_top .logo img {
+      width: 100%;
+      height: auto;
+    }
+    nav.nave_top .nav_side {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    nav.nave_top .nav_side a {
+    margin-right: 10px;
+    margin-left:50px;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-left: 15px;
+    color: white;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+   
+}
+
+nav.nave_top .nav_side a:hover {
+    color: rgb(79, 255, 88); /* Green on hover */
+    transition: all 1s ease;
+}
+
+
+    /* Main Content Styles */
+    .main-content {
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+      z-index: 5;
+    }
+    .main-content h2 {
+      font-size: 3em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Donate Section */
+    .donate {
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.7);
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    /* Button Styles */
+    .side_btn a {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #427bb8;
+      color: #fff;
+      border-radius: 5px;
+      margin: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .side_btn a:hover {
+      background-color: rgb(173, 216, 230);
+      color: #000;
+    }
+
+    /* Footer Styles */
+    footer {
+      background-color: rgba(51, 51, 51, 0.9);
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Social Icons */
+    .social a {
+      font-size: 20px;
+      color: #fff;
+      margin-right: 10px;
+    }
+    .social a:hover {
+      color: #cc851c;
+    }
+
+    /* Contact Information */
+    .contact-info {
+      text-align: left;
+      font-size: 1em;
+      margin: 20px;
+      padding: 10px;
+    }
+    .main-content p {
+      font-size: 1.2em;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav.nav_top {
+        flex-direction: column;
+        align-items: center;
+      }
+      .main-content h2 {
+        font-size: 2em;
+      }
+      .donate {
+        font-size: 1em;
+      }
+      .side_btn a {
+        width: 100%;
+      }
+      footer {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="main-content">
+    <h2>What We Do?</h2>
+    <p>
+      At Abdul's Charity, we are dedicated to making a difference in the lives of those in need by providing essential resources and support through initiatives in education, healthcare, and emergency relief. Every donation, no matter how small, helps us distribute food, offer medical care, and support educational programs that empower individuals to improve their circumstances. Your generous contributions allow us to extend our reach and continue our vital work. Join us in our mission to create a brighter future for those less fortunate—together, we can bring hope and change to countless lives. Thank you for your support!
+    </p>
+    <div class="donate">
+      <h2>Donate Where Needed Most</h2>
+      <div class="side_btn">
+        <a href="#">Rs.25</a>
+        <a href="#">Rs.50</a>
+        <a href="#">Rs.100</a>
+        <a href="#">Rs.500</a>
+        <a href="#">OTHER</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="contact-info">
+      <p>Contact us: mohdadbulrafi17@gmail.com</p>
+      <p>Phone: (+91) 995908837</p>
+    </div>
+  </footer>
+</body>
+</html>
