@@ -3,169 +3,204 @@ body
     background-color: black;
 }
 /*------------------------------------------------NAVBAR----------------------------------------*/
-.nav
-{
+.nav {
     background-color: rgba(0, 0, 0, 0.856);
     z-index: 9;
     padding-left: 50px;
     padding-right: 50px;
-    display:flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0px 3px 65px 0px rgba(0, 0, 0, 0.856);
+    flex-wrap: wrap;
 }
-.nav_top
-{
-    position:fixed;
-    top:0;
-    right:0;
-    left:0;
+
+.logo {
+    width: auto;
 }
-.logo
-{
-    float:left;
-    width: 50%;
-}
-.logo img
-{
+
+.logo img {
     padding: 8px;
-    width:30%;
-    margin-left:10%;
+    width: 100px;
+    margin-left: 0;
 }
-.nav_side
-{
-    float:right;
-    width:45%;
-    margin-top: 20px;
+
+.nav_side {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto;
+    margin-top: 0;
 }
-.nav_side a
-{
+
+.nav_side a {
     text-decoration: none;
     margin-right: 10px;
-    margin-left:50px;
-    margin-top: 20px;
-    padding-top: 20px;
-    padding-left: 15px;
+    margin-left: 20px;
     color: white;
     font-weight: bold;
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 15px;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-    
+    padding: 15px;
 }
-.nav_side a:hover
-{
+
+.nav_side a:hover {
     color: rgb(79, 255, 88);
     transition: all 1s ease;
 }
 
+/* For tablets */
+@media (max-width: 1024px) {
+    .nav {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .nav_side a {
+        margin-left: 15px;
+        font-size: 14px;
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .logo img {
+        width: 70px;
+        margin-left: 0;
+    }
+
+    .nav_side {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav_side a {
+        margin-left: 10px;
+        margin-right: 10px;
+        font-size: 12px;
+    }
+}
+
+
 /*------------------------------------------------MAIN----------------------------------------*/
-.main
-{
+/*----------------------------------------MAIN SECTION------------------------------------------*/
+
+.main {
     background-image: url("poor.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 130vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
 }
-.main .main_content
-{
-    padding-top: 10%;
-    margin-left: 10%;
-    margin-right: 10%;
-    width:40%;
+
+.main .main_content {
+    padding-top: 5%;
+    width: 60%; /* Adjust width for larger screens */
 }
-.main .main_content h2
-{
+
+.main .main_content h2 {
     color: white;
     font-size: 350%;
     font-family: 'Trebuchet MS', sans-serif;
     font-weight: bolder;
     text-align: left;
 }
-.main .main_content h2 span
-{
-    font-size:50%;
+
+.main .main_content h2 span {
+    font-size: 50%;
     opacity: 0.9;
     font-weight: 400;
     line-height: 50px;
 }
-.main .main_content .btn
-{
-    margin-top:10%;
+
+.main .main_content .btn {
+    margin-top: 10%;
     text-align: left;
-    width:0%;
 }
-.main .main_content .btn a
-{
+
+.main .main_content .btn a {
     text-decoration: none;
     font-size: large;
-    margin:44%;
     padding: 10px 20px;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.856);
-    color:white;
+    color: white;
     font-family: 'Trebuchet MS', sans-serif; 
     text-align: center;
     border: 2px solid rgba(0, 0, 0, 0.856);
     transition: 0.5s;
 }
-.main .main_content .btn a:hover
-{
+
+.main .main_content .btn a:hover {
     background-color: rgba(255, 255, 255, 0.527);
     color: rgb(37, 0, 19);
     border: none;
     border: 4px solid rgb(37, 0, 19);
-    transition:0.5s;
+    transition: 0.5s;
 }
-/*------------------------------------------------SIDE----------------------------------------*/
-.side 
-{
+
+/*-------------------------------------SIDE SECTION--------------------------------------------*/
+
+.side {
     background-color: rgba(0, 0, 0, 0.966);
     display: flex;
-    text-align: center;
+    flex-wrap: wrap; /* Enable wrapping for smaller screens */
     color: white;
     font-family: 'Trebuchet MS', sans-serif;
+    padding: 2%;
 }
-.side .left
-{
-    width:50%;
-    float: left;
+
+.side .left, .side .right {
+    width: 50%; /* Split into two columns for larger screens */
 }
-.side .left img
-{
-    float: left;
-    width:100%;
+
+.side .left img {
+    width: 100%; /* Ensure image takes full width */
 }
-.side .right
-{
-    background-color: rgba(0, 0, 0, 0.966);
-    width:50%;
-    float:right;
+
+.side .right {
+    text-align: center;
+    padding: 2%;
 }
-.side .right h2
-{
+
+.side .right h2 {
     margin-top: 8%;
     font-size: 250%;
 }
-.side .right p
-{
-    margin-left: 15%;
+
+.side .right p {
+    margin: 0 auto;
     width: 70%;
     font-size: 147%;
     margin-top: 6%;
 }
-.side .right .side_btn
-{
-    margin-top:4%;
+
+.side .right .side_btn {
+    margin-top: 4%;
 }
-.side .right .side_btn a
-{
+
+.side .right .side_btn a {
     text-decoration: none;
     font-size: large;
-    margin:32%;
     padding: 10px 20px;
     font-weight: bold;
     color: white;
@@ -174,20 +209,85 @@ body
     border: 4px double whitesmoke;
     transition: 0.5s;
 }
-.side .right .side_btn a:hover
-{
+
+.side .right .side_btn a:hover {
     background-color: rgb(79, 255, 88);
     color: black;
-    font-weight:bolder;
+    font-weight: bolder;
     border: none;
     border: 4px solid green;
-    transition:0.5s;
+    transition: 0.5s;
 }
 
+/*---------------------------------MEDIA QUERIES FOR RESPONSIVENESS-----------------------------*/
+
+/* For tablets (screen width less than 1024px) */
+@media (max-width: 1024px) {
+    .main .main_content {
+        width: 80%; /* Make content wider */
+    }
+
+    .side .left, .side .right {
+        width: 100%; /* Stack side sections vertically */
+    }
+
+    .side .right h2 {
+        font-size: 200%; /* Adjust heading size */
+    }
+
+    .side .right p {
+        font-size: 125%; /* Adjust paragraph size */
+    }
+}
+
+/* For mobile phones (screen width less than 768px) */
+@media (max-width: 768px) {
+    .main {
+        height: auto;
+        padding: 5%;
+    }
+
+    .main .main_content {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .main .main_content h2 {
+        font-size: 250%; /* Smaller font size for mobile */
+    }
+
+    .main .main_content h2 span {
+        font-size: 40%;
+    }
+
+    .main .main_content .btn a {
+        font-size: medium;
+        padding: 8px 15px; /* Adjust padding */
+    }
+
+    .side {
+        padding: 5%;
+    }
+
+    .side .right h2 {
+        font-size: 180%;
+    }
+
+    .side .right p {
+        font-size: 115%;
+    }
+
+    .side .right .side_btn a {
+        font-size: medium;
+        padding: 8px 15px;
+    }
+}
+
+
 /*--------------------------------------------HOW WE HELP----------------------------------------*/
-.product
-{
-    float:left;
+/*------------------------------------PRODUCT SECTION--------------------------------------*/
+
+.product {
+    float: left;
     background-image: url("images/poor.jpg");
     background-position: center;
     background-size: cover;
@@ -198,212 +298,234 @@ body
     font-family: 'Trebuchet MS', sans-serif;
     color: white;
 }
-.product h2
-{
+
+.product h2 {
     font-size: 45px;
     text-align: center;
     padding: 20px;
 }
-.product .product_container
-{
-    display:flex;
+
+.product .product_container {
+    display: flex;
+    justify-content: space-between; /* Space between items */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
     margin-left: 5%;
     margin-right: 5%;
 }
-.product .product_container .item
-{
-    width:33%;
+
+.product .product_container .item {
+    width: 32%; /* Adjust width for larger screens */
     margin: 10px;
-    height: 10%;
+    height: 300px; /* Set a more defined height */
     background-color: black;
     opacity: 80%;
     border-radius: 50%;
+    transition: all 0.5s ease; /* Smooth hover effect */
 }
-.product .product_container .item:hover
-{
-    box-shadow:0px 3px 65px 0px rgb(255, 189, 165);
+
+.product .product_container .item:hover {
+    box-shadow: 0px 3px 65px 0px rgb(255, 189, 165);
 }
-.product .product_container .item .item_img
-{
-    width:60%;
-    height: 20%;
-    overflow:hidden;
-    margin-left: 23%;
+
+.product .product_container .item .item_img {
+    width: 60%;
+    margin: 0 auto; /* Center image */
+    height: 50%; /* Adjust image container height */
+    overflow: hidden;
 }
-.product .product_container .item .item_img img
-{
-    width:100%;
-    height: 10%;
+
+.product .product_container .item .item_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
 }
-.product .product_container .item .item_content
-{
+
+.product .product_container .item .item_content {
     text-align: center;
+    padding-top: 10px;
 }
-.product .product_container .item .item_content h3
-{
+
+.product .product_container .item .item_content h3 {
     font-size: 25px;
     line-height: 2px;
     color: rgb(79, 255, 88);
     font-weight: bolder;
 }
-.product .product_container .item .item_content p
-{
+
+.product .product_container .item .item_content p {
     font-size: 20px;
     line-height: 25px;
     width: 80%;
     text-align: center;
-    padding-left: 20%;
-}
-/*--------------------------------------------FOOTER----------------------------------------*/
-footer
-{
-    background-color: black;
-    padding:50px;
-    display: inline-block;
-    font-family: 'Trebuchet MS', sans-serif;
-}
-footer .aimg
-{
-    margin-top:21%;
-}
-footer .pages
-{
-    width:25%;
-    text-align: center;
-    display: inline-block;
+    margin: 0 auto; /* Center text */
 }
 
-footer .pages p
-{
+/*----------------------------MEDIA QUERIES FOR RESPONSIVENESS----------------------------*/
+
+/* For tablets (screen width less than 1024px) */
+@media (max-width: 1024px) {
+    .product .product_container .item {
+        width: 48%; /* Two items per row on tablet screens */
+    }
+
+    .product h2 {
+        font-size: 35px; /* Adjust heading size */
+    }
+}
+
+/* For mobile phones (screen width less than 768px) */
+@media (max-width: 768px) {
+    .product {
+        height: auto; /* Let height adjust naturally */
+        padding-bottom: 20px;
+    }
+
+    .product .product_container {
+        margin: 0; /* Remove extra margins */
+    }
+
+    .product .product_container .item {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 20px; /* Add margin between items */
+    }
+
+    .product h2 {
+        font-size: 30px; /* Smaller font size for mobile */
+    }
+
+    .product .product_container .item .item_content h3 {
+        font-size: 22px;
+    }
+
+    .product .product_container .item .item_content p {
+        font-size: 18px;
+    }
+}
+
+/*--------------------------------------------FOOTER----------------------------------------*/
+/*------------------------------------FOOTER SECTION--------------------------------------*/
+
+footer {
+    background-color: black;
+    padding: 50px;
+    display: flex; /* Flexbox for layout */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between; /* Even spacing between elements */
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+footer .aimg {
+    margin-top: 21%;
+}
+
+footer .pages, footer .doc, footer .social, footer .contact {
+    width: 22%; /* Responsive width for desktop */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    padding-bottom: 20px;
+}
+
+/* Responsive text and links styling */
+footer .pages p,
+footer .social p {
     padding-top: 5%;
     text-align: left;
-    color:rgba(255, 226, 243, 0.808);
-    width:90%;
-    padding-left:12%;
+    color: rgba(255, 226, 243, 0.808);
+    width: 90%;
+    padding-left: 12%;
 }
-footer .pages a
-{
+
+footer .pages a,
+footer .doc a,
+footer .contact a {
     text-decoration: none;
-    margin:10px;
     color: rgba(255, 226, 243, 0.808);
     font-size: 30px;
+    margin: 10px;
+    transition: color 0.5s ease;
 }
-footer .pages a:hover
-{
-    color:white;
+
+footer .pages a:hover,
+footer .doc a:hover,
+footer .contact a:hover {
+    color: white;
 }
-footer .doc
-{
-    width:25%;
-    text-align: center;
-    display: inline-block;
-    padding-bottom: 5%;
-}
-footer .doc h3
-{
+
+footer .doc h3, footer .social h3, footer .contact h3 {
     color: rgb(255, 226, 243);
     font-size: 30px;
     padding: 5px;
     font-weight: bold;
     line-height: 130px;
 }
-footer .doc a
-{
-    display: block;
-    text-decoration: none;
-    margin:10px;
-    color: rgba(255, 226, 243, 0.808);
-    font-size: 25px;
-}
-footer .doc a:hover
-{
-    color:white;
-}
-footer .social
-{
-    width:25%;
-    text-align: center;
-    display: inline-block;
-}
-footer .social h3
-{
-    color: rgb(255, 226, 243);
-    font-size: 30px;
-    padding: 5px;
-    font-weight: bold;
-    line-height: 130px;
-}
-footer .contact
-{
-    width:20%;
-    text-align: center;
-    text-align: left;
-}
-footer .contact h3
-{
-    color: rgb(255, 226, 243);
-    font-size: 30px;
-    padding: 5px;
-    font-weight: bold;
-    line-height: 130px;
-}
-footer .social p
-{
-    padding-top: 5%;
-    text-align: left;
-    color:rgba(255, 226, 243, 0.808);
-    width:90%;
-    padding-left:12%;
-    font-size: large;
-    margin-bottom: 18%;
-}
-.side .right .side_btn
-{
-    margin-top:4%;
-}
-footer .side_btn a
-{
+
+/* Responsive button styling */
+footer .side_btn a {
     text-decoration: none;
     font-size: 100%;
     padding: 10px 20px;
     font-weight: bold;
     color: white;
-    font-family: 'Trebuchet MS', sans-serif;
     border: 2px double whitesmoke;
-    transition: 0.5s;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
-footer .side_btn a:hover
-{
+
+footer .side_btn a:hover {
     background-color: rgb(79, 255, 88);
     color: black;
-    font-weight:bolder;
+    font-weight: bolder;
     border: none;
     border: 4px solid green;
-    transition:0.5s;
 }
-footer .contact
-{
-    display: inline-block;
-}
-footer .contact a
-{
-    display: block;
-    font-size: 20px;
-    line-height: 38px;
-    text-decoration: none;;
-    color:rgba(247, 193, 224, 0.904);
-    margin:10px;
-}
-footer .contact a:hover
-{
-    color:white;
-}
-footer p
-{
-    color:rgba(247, 178, 217, 0.726);
+
+footer p {
+    color: rgba(247, 178, 217, 0.726);
     text-align: center;
-    font-size: 110%;
+    padding-top: 20px;
 }
+
+/*----------------------------MEDIA QUERIES FOR RESPONSIVENESS----------------------------*/
+
+/* For tablets (screen width less than 1024px) */
+@media (max-width: 1024px) {
+    footer .pages, footer .doc, footer .social, footer .contact {
+        width: 48%; /* Two columns per row on tablets */
+        padding-bottom: 15px;
+    }
+
+    footer .pages a, footer .doc a, footer .contact a {
+        font-size: 25px; /* Adjust font size for tablets */
+    }
+}
+
+/* For mobile phones (screen width less than 768px) */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+    }
+
+    footer .pages, footer .doc, footer .social, footer .contact {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 20px;
+    }
+
+    footer .pages p, footer .social p {
+        padding-left: 0; /* Center text for mobile */
+        text-align: center;
+    }
+
+    footer .pages a, footer .doc a, footer .contact a {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+
+    footer .doc h3, footer .social h3, footer .contact h3 {
+        font-size: 25px; /* Adjust heading size */
+        line-height: 100px;
+    }
+}
+
 /*------------------------------------------------MAIN_ABOUT----------------------------------------*/
 .main_about
 {
@@ -498,8 +620,9 @@ footer p
     transition:0.5s;
 }
 /*--------------------------------------------CONTACT---------------------------------------*/
-.contact_container
-{
+/*----------------------------CONTACT CONTAINER SECTION----------------------------*/
+
+.contact_container {
     padding: 100px;
     font-family: 'Trebuchet MS', sans-serif;
     background-image: url("images/about_back.jpg");
@@ -508,30 +631,131 @@ footer p
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 180vh;
-    margin-top:-1.5%;
+    margin-top: -1.5%;
     color: white;
 }
-.contact_container h2
-{
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+
+.contact_container h2 {
+    font-family: 'Trebuchet MS', sans-serif;
     font-size: 33px;
     text-align: center;
-    font-family: 'Trebuchet MS', sans-serif;
-}
-.contact_container .g_map
-{
-    border:10px solid white;
-}
-.contact_container .contact_content
-{
-    padding:20px;
-    font-family: 'Trebuchet MS', sans-serif;
 }
 
-.contact_container .contact_content p
-{
-    padding:15px;
+.contact_container .g_map {
+    border: 10px solid white;
+    width: 100%; /* Ensures map adjusts to container width */
+}
+
+.contact_container .contact_content {
+    padding: 20px;
+}
+
+.contact_container .contact_content p {
+    padding: 15px;
     font-size: 20px;
     line-height: 25px;
 }
+
+/*----------------------------MEDIA QUERIES FOR RESPONSIVENESS----------------------------*/
+
+/* For tablets (screen width less than 1024px) */
+@media (max-width: 1024px) {
+    .contact_container {
+        padding: 50px; /* Reduce padding for tablets */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .contact_container h2 {
+        font-size: 28px; /* Slightly reduce heading size */
+    }
+
+    .contact_container .contact_content p {
+        font-size: 18px;
+        line-height: 22px;
+    }
+}
+
+/* For mobile phones (screen width less than 768px) */
+@media (max-width: 768px) {
+    .contact_container {
+        padding: 30px; /* Further reduce padding for mobile */
+        height: auto;
+    }
+
+    .contact_container h2 {
+        font-size: 24px; /* Reduce font size for mobile */
+    }
+
+    .contact_container .contact_content p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .contact_container .g_map {
+        width: 100%; /* Full width */
+        height: 0; /* Reset height to maintain aspect ratio */
+        padding-bottom: 50%; /* Set to 50% for a 2:1 aspect ratio */
+        border: 10px solid white; /* Border for aesthetics */
+        margin: 0 auto; /* Center the map if it has a defined width */
+        position: relative; /* Position for absolute positioning of the iframe */
+        overflow: hidden; /* Hide overflow to keep the border clean */
+        box-sizing: border-box; /* Include padding and border in width/height */
+    }
+    
+    /* iframe styling */
+    .contact_container .g_map iframe {
+        position: absolute; /* Position it absolutely within the parent */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; /* Fill the parent container */
+    }
+    
+    /*----------------------------MEDIA QUERIES FOR G_MAP RESPONSIVENESS----------------------------*/
+    
+    /* For tablets (screen width less than 1024px) */
+    @media (max-width: 1024px) {
+        .contact_container .g_map {
+            padding-bottom: 40%; /* Adjust for tablets */
+        }
+    }
+    
+    /* For mobile phones (screen width less than 768px) */
+    @media (max-width: 768px) {
+        .contact_container .g_map {
+            padding-bottom: 35%; /* Further adjust height for mobile */
+        }
+    }
+    
+    /* For smaller mobile phones (screen width less than 480px) */
+    @media (max-width: 480px) {
+        .contact_container .g_map {
+            padding-bottom: 30%; /* Adjust for small devices */
+        }
+    }
+    
+    
+}
+
+/* For smaller mobile phones (screen width less than 480px) */
+@media (max-width: 480px) {
+    .contact_container {
+        padding: 20px;
+        height: auto;
+    }
+
+    .contact_container h2 {
+        font-size: 20px; /* Further reduce heading size for small devices */
+    }
+
+    .contact_container .contact_content p {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .contact_container .g_map {
+        width: 100%; /* Ensure map still fits the container */
+    }
+}
+
 /*--------------------------------------------CATERING---------------------------------------*/
