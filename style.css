@@ -9,39 +9,47 @@ body
     padding-left: 50px;
     padding-right: 50px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Distribute space between logo and nav items */
+    align-items: center; /* Center vertically */
     box-shadow: 0px 3px 65px 0px rgba(0, 0, 0, 0.856);
-    flex-wrap: wrap;
+}
+
+.nav_top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%; /* Ensure full width on all screen sizes */
 }
 
 .logo {
-    width: auto;
+    width: 50%;
 }
 
 .logo img {
     padding: 8px;
-    width: 100px;
-    margin-left: 0;
+    width: 30%;
+    margin-left: 10%;
 }
 
 .nav_side {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: auto;
-    margin-top: 0;
+    width: 45%;
+    margin-top: 20px;
 }
 
 .nav_side a {
     text-decoration: none;
     margin-right: 10px;
-    margin-left: 20px;
+    margin-left: 50px;
     color: white;
     font-weight: bold;
     font-family: 'Trebuchet MS', sans-serif;
     font-size: 15px;
-    padding: 15px;
+    padding: 10px;
+    display: block;
 }
 
 .nav_side a:hover {
@@ -49,56 +57,50 @@ body
     transition: all 1s ease;
 }
 
-/* For tablets */
-@media (max-width: 1024px) {
-    .nav {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .logo img {
-        width: 80px;
-    }
-
-    .nav_side a {
-        margin-left: 15px;
-        font-size: 14px;
-    }
-}
-
-/* For mobile phones */
+/* Responsive Styling */
 @media (max-width: 768px) {
     .nav {
-        flex-direction: column;
+        flex-direction: column; /* Stack logo and nav items vertically */
         padding-left: 20px;
         padding-right: 20px;
     }
 
     .logo {
-        margin-bottom: 10px;
+        width: 100%; /* Logo takes full width */
+        text-align: center;
     }
 
     .logo img {
-        width: 70px;
+        width: 50%; /* Increase size on smaller screens */
         margin-left: 0;
     }
 
     .nav_side {
+        width: 100%;
         justify-content: center;
-        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .nav_side a {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 14px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 60%; /* Further increase logo size for smaller screens */
     }
 
     .nav_side a {
         margin-left: 10px;
         margin-right: 10px;
-        font-size: 12px;
+        font-size: 12px; /* Reduce font size */
     }
 }
 
-
 /*------------------------------------------------MAIN----------------------------------------*/
-/*----------------------------------------MAIN SECTION------------------------------------------*/
-
 .main {
     background-image: url("poor.jpg");
     background-position: center;
@@ -106,15 +108,13 @@ body
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 130vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10%;
 }
 
 .main .main_content {
-    padding-top: 5%;
-    width: 60%; /* Adjust width for larger screens */
+    padding-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 40%;
 }
 
 .main .main_content h2 {
@@ -135,16 +135,18 @@ body
 .main .main_content .btn {
     margin-top: 10%;
     text-align: left;
+    width: 100%;
 }
 
 .main .main_content .btn a {
     text-decoration: none;
     font-size: large;
+    margin: 0;
     padding: 10px 20px;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.856);
     color: white;
-    font-family: 'Trebuchet MS', sans-serif; 
+    font-family: 'Trebuchet MS', sans-serif;
     text-align: center;
     border: 2px solid rgba(0, 0, 0, 0.856);
     transition: 0.5s;
@@ -158,28 +160,96 @@ body
     transition: 0.5s;
 }
 
-/*-------------------------------------SIDE SECTION--------------------------------------------*/
+/* Responsive Styling */
+@media (max-width: 1024px) {
+    .main .main_content {
+        width: 60%; /* Increase content width for tablet screens */
+        margin-left: 5%;
+        margin-right: 5%;
+    }
 
+    .main .main_content h2 {
+        font-size: 300%; /* Reduce the heading size */
+    }
+
+    .main .main_content h2 span {
+        font-size: 45%; /* Adjust span size */
+    }
+}
+
+@media (max-width: 768px) {
+    .main .main_content {
+        width: 80%; /* Increase content width for mobile screens */
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .main .main_content h2 {
+        font-size: 250%; /* Further reduce the heading size for mobile */
+    }
+
+    .main .main_content h2 span {
+        font-size: 40%; /* Adjust span size for mobile */
+        line-height: 40px;
+    }
+
+    .main .main_content .btn a {
+        font-size: medium; /* Adjust button text size for mobile */
+        padding: 8px 15px; /* Adjust button padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        height: 100vh; /* Adjust height for smaller mobile screens */
+    }
+
+    .main .main_content {
+        width: 90%; /* Maximize content width for small screens */
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-top: 5%;
+    }
+
+    .main .main_content h2 {
+        font-size: 200%; /* Smaller heading size for small screens */
+    }
+
+    .main .main_content h2 span {
+        font-size: 35%;
+        line-height: 30px; /* Adjust line height */
+    }
+
+    .main .main_content .btn a {
+        font-size: small; /* Smaller font for the button */
+        padding: 6px 12px;
+    }
+}
+
+/*------------------------------------------------SIDE----------------------------------------*/
 .side {
     background-color: rgba(0, 0, 0, 0.966);
     display: flex;
-    flex-wrap: wrap; /* Enable wrapping for smaller screens */
+    text-align: center;
     color: white;
     font-family: 'Trebuchet MS', sans-serif;
-    padding: 2%;
+    padding: 20px;
 }
 
-.side .left, .side .right {
-    width: 50%; /* Split into two columns for larger screens */
+.side .left {
+    width: 50%;
+    float: left;
 }
 
 .side .left img {
-    width: 100%; /* Ensure image takes full width */
+    float: left;
+    width: 100%;
 }
 
 .side .right {
-    text-align: center;
-    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.966);
+    width: 50%;
+    float: right;
 }
 
 .side .right h2 {
@@ -188,7 +258,7 @@ body
 }
 
 .side .right p {
-    margin: 0 auto;
+    margin-left: 15%;
     width: 70%;
     font-size: 147%;
     margin-top: 6%;
@@ -201,6 +271,7 @@ body
 .side .right .side_btn a {
     text-decoration: none;
     font-size: large;
+    margin: 32%;
     padding: 10px 20px;
     font-weight: bold;
     color: white;
@@ -219,73 +290,77 @@ body
     transition: 0.5s;
 }
 
-/*---------------------------------MEDIA QUERIES FOR RESPONSIVENESS-----------------------------*/
-
-/* For tablets (screen width less than 1024px) */
+/* Responsive Styling */
 @media (max-width: 1024px) {
-    .main .main_content {
-        width: 80%; /* Make content wider */
-    }
-
-    .side .left, .side .right {
-        width: 100%; /* Stack side sections vertically */
-    }
-
-    .side .right h2 {
-        font-size: 200%; /* Adjust heading size */
-    }
-
-    .side .right p {
-        font-size: 125%; /* Adjust paragraph size */
-    }
-}
-
-/* For mobile phones (screen width less than 768px) */
-@media (max-width: 768px) {
-    .main {
-        height: auto;
-        padding: 5%;
-    }
-
-    .main .main_content {
-        width: 100%; /* Full width on mobile */
-    }
-
-    .main .main_content h2 {
-        font-size: 250%; /* Smaller font size for mobile */
-    }
-
-    .main .main_content h2 span {
-        font-size: 40%;
-    }
-
-    .main .main_content .btn a {
-        font-size: medium;
-        padding: 8px 15px; /* Adjust padding */
-    }
-
     .side {
-        padding: 5%;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .side .left,
+    .side .right {
+        width: 100%; /* Stack the sections on top of each other for tablet screens */
+        float: none;
     }
 
     .side .right h2 {
-        font-size: 180%;
+        font-size: 200%; /* Adjust heading size for tablets */
     }
 
     .side .right p {
-        font-size: 115%;
+        margin-left: 10%;
+        width: 80%; /* Adjust paragraph width for tablets */
+        font-size: 130%;
     }
 
     .side .right .side_btn a {
-        font-size: medium;
+        font-size: medium; /* Adjust button text size */
+        margin: 0;
         padding: 8px 15px;
     }
 }
 
+@media (max-width: 768px) {
+    .side .right h2 {
+        font-size: 180%; /* Further reduce heading size for mobile */
+    }
+
+    .side .right p {
+        font-size: 120%; /* Further adjust paragraph font size */
+        width: 90%; /* Increase content width for mobile screens */
+        margin-left: 5%;
+    }
+
+    .side .right .side_btn a {
+        font-size: small; /* Smaller button text for mobile */
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .side {
+        padding: 5px;
+    }
+
+    .side .right h2 {
+        font-size: 160%; /* Smaller heading size for small mobile devices */
+    }
+
+    .side .right p {
+        font-size: 110%; /* Adjust paragraph font size for small screens */
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+    .side .right .side_btn a {
+        font-size: smaller; /* Adjust button font size */
+        padding: 5px 10px;
+    }
+}
 
 /*--------------------------------------------HOW WE HELP----------------------------------------*/
-/*------------------------------------PRODUCT SECTION--------------------------------------*/
-
+/* Base styles remain unchanged */
 .product {
     float: left;
     background-image: url("images/poor.jpg");
@@ -307,20 +382,17 @@ body
 
 .product .product_container {
     display: flex;
-    justify-content: space-between; /* Space between items */
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
     margin-left: 5%;
     margin-right: 5%;
 }
 
 .product .product_container .item {
-    width: 32%; /* Adjust width for larger screens */
+    width: 33%;
     margin: 10px;
-    height: 300px; /* Set a more defined height */
+    height: 10%;
     background-color: black;
     opacity: 80%;
     border-radius: 50%;
-    transition: all 0.5s ease; /* Smooth hover effect */
 }
 
 .product .product_container .item:hover {
@@ -329,20 +401,18 @@ body
 
 .product .product_container .item .item_img {
     width: 60%;
-    margin: 0 auto; /* Center image */
-    height: 50%; /* Adjust image container height */
+    height: 20%;
     overflow: hidden;
+    margin-left: 23%;
 }
 
 .product .product_container .item .item_img img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the image covers the container */
+    height: 10%;
 }
 
 .product .product_container .item .item_content {
     text-align: center;
-    padding-top: 10px;
 }
 
 .product .product_container .item .item_content h3 {
@@ -357,175 +427,201 @@ body
     line-height: 25px;
     width: 80%;
     text-align: center;
-    margin: 0 auto; /* Center text */
+    padding-left: 20%;
 }
 
-/*----------------------------MEDIA QUERIES FOR RESPONSIVENESS----------------------------*/
-
-/* For tablets (screen width less than 1024px) */
-@media (max-width: 1024px) {
+/* Responsive styles */
+@media (max-width: 1200px) {
     .product .product_container .item {
-        width: 48%; /* Two items per row on tablet screens */
-    }
-
-    .product h2 {
-        font-size: 35px; /* Adjust heading size */
+        width: 45%; /* Adjust to two items per row */
     }
 }
 
-/* For mobile phones (screen width less than 768px) */
 @media (max-width: 768px) {
-    .product {
-        height: auto; /* Let height adjust naturally */
-        padding-bottom: 20px;
-    }
-
     .product .product_container {
-        margin: 0; /* Remove extra margins */
+        flex-direction: column; /* Stack items vertically */
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .product .product_container .item {
-        width: 100%; /* Full width on mobile */
-        margin-bottom: 20px; /* Add margin between items */
+        width: 80%; /* Take full width on smaller screens */
+        margin: 10px auto; /* Center items */
     }
 
     .product h2 {
-        font-size: 30px; /* Smaller font size for mobile */
+        font-size: 36px; /* Slightly smaller font */
+    }
+}
+
+@media (max-width: 480px) {
+    .product h2 {
+        font-size: 28px; /* Smaller font for very small screens */
     }
 
     .product .product_container .item .item_content h3 {
-        font-size: 22px;
+        font-size: 20px; /* Adjust font size for titles */
     }
 
     .product .product_container .item .item_content p {
-        font-size: 18px;
+        font-size: 16px; /* Adjust font size for paragraphs */
     }
 }
 
 /*--------------------------------------------FOOTER----------------------------------------*/
-/*------------------------------------FOOTER SECTION--------------------------------------*/
+* {
+    box-sizing: border-box;
+}
 
-footer {
+footer
+{
     background-color: black;
-    padding: 50px;
-    display: flex; /* Flexbox for layout */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    justify-content: space-between; /* Even spacing between elements */
+    padding:50px;
+    display: inline-block;
     font-family: 'Trebuchet MS', sans-serif;
 }
-
-footer .aimg {
-    margin-top: 21%;
+footer .aimg
+{
+    margin-top:21%;
 }
-
-footer .pages, footer .doc, footer .social, footer .contact {
-    width: 22%; /* Responsive width for desktop */
+footer .pages
+{
+    width:25%;
     text-align: center;
-    display: flex;
-    flex-direction: column; /* Stack content vertically */
-    padding-bottom: 20px;
+    display: inline-block;
 }
 
-/* Responsive text and links styling */
-footer .pages p,
-footer .social p {
+footer .pages p
+{
     padding-top: 5%;
     text-align: left;
-    color: rgba(255, 226, 243, 0.808);
-    width: 90%;
-    padding-left: 12%;
+    color:rgba(255, 226, 243, 0.808);
+    width:90%;
+    padding-left:12%;
 }
-
-footer .pages a,
-footer .doc a,
-footer .contact a {
+footer .pages a
+{
     text-decoration: none;
+    margin:10px;
     color: rgba(255, 226, 243, 0.808);
     font-size: 30px;
-    margin: 10px;
-    transition: color 0.5s ease;
 }
-
-footer .pages a:hover,
-footer .doc a:hover,
-footer .contact a:hover {
-    color: white;
+footer .pages a:hover
+{
+    color:white;
 }
-
-footer .doc h3, footer .social h3, footer .contact h3 {
+footer .doc
+{
+    width:25%;
+    text-align: center;
+    display: inline-block;
+    padding-bottom: 5%;
+}
+footer .doc h3
+{
     color: rgb(255, 226, 243);
     font-size: 30px;
     padding: 5px;
     font-weight: bold;
     line-height: 130px;
 }
-
-/* Responsive button styling */
-footer .side_btn a {
+footer .doc a
+{
+    display: block;
+    text-decoration: none;
+    margin:10px;
+    color: rgba(255, 226, 243, 0.808);
+    font-size: 25px;
+}
+footer .doc a:hover
+{
+    color:white;
+}
+footer .social
+{
+    width:25%;
+    text-align: center;
+    display: inline-block;
+}
+footer .social h3
+{
+    color: rgb(255, 226, 243);
+    font-size: 30px;
+    padding: 5px;
+    font-weight: bold;
+    line-height: 130px;
+}
+footer .contact
+{
+    width:20%;
+    text-align: center;
+    text-align: left;
+}
+footer .contact h3
+{
+    color: rgb(255, 226, 243);
+    font-size: 30px;
+    padding: 5px;
+    font-weight: bold;
+    line-height: 130px;
+}
+footer .social p
+{
+    padding-top: 5%;
+    text-align: left;
+    color:rgba(255, 226, 243, 0.808);
+    width:90%;
+    padding-left:12%;
+    font-size: large;
+    margin-bottom: 18%;
+}
+.side .right .side_btn
+{
+    margin-top:4%;
+}
+footer .side_btn a
+{
     text-decoration: none;
     font-size: 100%;
     padding: 10px 20px;
     font-weight: bold;
     color: white;
+    font-family: 'Trebuchet MS', sans-serif;
     border: 2px double whitesmoke;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: 0.5s;
 }
-
-footer .side_btn a:hover {
+footer .side_btn a:hover
+{
     background-color: rgb(79, 255, 88);
     color: black;
-    font-weight: bolder;
+    font-weight:bolder;
     border: none;
     border: 4px solid green;
+    transition:0.5s;
 }
-
-footer p {
-    color: rgba(247, 178, 217, 0.726);
+footer .contact
+{
+    display: inline-block;
+}
+footer .contact a
+{
+    display: block;
+    font-size: 20px;
+    line-height: 38px;
+    text-decoration: none;;
+    color:rgba(247, 193, 224, 0.904);
+    margin:10px;
+}
+footer .contact a:hover
+{
+    color:white;
+}
+footer p
+{
+    color:rgba(247, 178, 217, 0.726);
     text-align: center;
-    padding-top: 20px;
+    font-size: 110%;
 }
-
-/*----------------------------MEDIA QUERIES FOR RESPONSIVENESS----------------------------*/
-
-/* For tablets (screen width less than 1024px) */
-@media (max-width: 1024px) {
-    footer .pages, footer .doc, footer .social, footer .contact {
-        width: 48%; /* Two columns per row on tablets */
-        padding-bottom: 15px;
-    }
-
-    footer .pages a, footer .doc a, footer .contact a {
-        font-size: 25px; /* Adjust font size for tablets */
-    }
-}
-
-/* For mobile phones (screen width less than 768px) */
-@media (max-width: 768px) {
-    footer {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center;
-    }
-
-    footer .pages, footer .doc, footer .social, footer .contact {
-        width: 100%; /* Full width on mobile */
-        margin-bottom: 20px;
-    }
-
-    footer .pages p, footer .social p {
-        padding-left: 0; /* Center text for mobile */
-        text-align: center;
-    }
-
-    footer .pages a, footer .doc a, footer .contact a {
-        font-size: 20px; /* Smaller font size for mobile */
-    }
-
-    footer .doc h3, footer .social h3, footer .contact h3 {
-        font-size: 25px; /* Adjust heading size */
-        line-height: 100px;
-    }
-}
-
 /*------------------------------------------------MAIN_ABOUT----------------------------------------*/
 .main_about
 {
@@ -585,7 +681,7 @@ footer p {
 }
 .donate .donate_container h1
 {
-    color: rgba(147, 235, 15, 0.501);
+    color: rgb(79, 255, 88);
     line-height: 100px;
 }
 .donate .donate_container p
@@ -620,9 +716,8 @@ footer p {
     transition:0.5s;
 }
 /*--------------------------------------------CONTACT---------------------------------------*/
-/*----------------------------CONTACT CONTAINER SECTION----------------------------*/
-
-.contact_container {
+.contact_container
+{
     padding: 100px;
     font-family: 'Trebuchet MS', sans-serif;
     background-image: url("images/about_back.jpg");
@@ -631,131 +726,30 @@ footer p {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 180vh;
-    margin-top: -1.5%;
+    margin-top:-1.5%;
     color: white;
 }
-
-.contact_container h2 {
-    font-family: 'Trebuchet MS', sans-serif;
+.contact_container h2
+{
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     font-size: 33px;
     text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
 }
-
-.contact_container .g_map {
-    border: 10px solid white;
-    width: 100%; /* Ensures map adjusts to container width */
+.contact_container .g_map
+{
+    border:10px solid white;
 }
-
-.contact_container .contact_content {
-    padding: 20px;
+.contact_container .contact_content
+{
+    padding:20px;
+    font-family: 'Trebuchet MS', sans-serif;
 }
-
-.contact_container .contact_content p {
-    padding: 15px;
+.contact_container .contact_content p
+{
+    padding:15px;
     font-size: 20px;
     line-height: 25px;
-}
-
-/*----------------------------MEDIA QUERIES FOR RESPONSIVENESS----------------------------*/
-
-/* For tablets (screen width less than 1024px) */
-@media (max-width: 1024px) {
-    .contact_container {
-        padding: 50px; /* Reduce padding for tablets */
-        height: auto; /* Allow height to adjust based on content */
-    }
-
-    .contact_container h2 {
-        font-size: 28px; /* Slightly reduce heading size */
-    }
-
-    .contact_container .contact_content p {
-        font-size: 18px;
-        line-height: 22px;
-    }
-}
-
-/* For mobile phones (screen width less than 768px) */
-@media (max-width: 768px) {
-    .contact_container {
-        padding: 30px; /* Further reduce padding for mobile */
-        height: auto;
-    }
-
-    .contact_container h2 {
-        font-size: 24px; /* Reduce font size for mobile */
-    }
-
-    .contact_container .contact_content p {
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    .contact_container .g_map {
-        width: 100%; /* Full width */
-        height: 0; /* Reset height to maintain aspect ratio */
-        padding-bottom: 50%; /* Set to 50% for a 2:1 aspect ratio */
-        border: 10px solid white; /* Border for aesthetics */
-        margin: 0 auto; /* Center the map if it has a defined width */
-        position: relative; /* Position for absolute positioning of the iframe */
-        overflow: hidden; /* Hide overflow to keep the border clean */
-        box-sizing: border-box; /* Include padding and border in width/height */
-    }
-    
-    /* iframe styling */
-    .contact_container .g_map iframe {
-        position: absolute; /* Position it absolutely within the parent */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%; /* Fill the parent container */
-    }
-    
-    /*----------------------------MEDIA QUERIES FOR G_MAP RESPONSIVENESS----------------------------*/
-    
-    /* For tablets (screen width less than 1024px) */
-    @media (max-width: 1024px) {
-        .contact_container .g_map {
-            padding-bottom: 40%; /* Adjust for tablets */
-        }
-    }
-    
-    /* For mobile phones (screen width less than 768px) */
-    @media (max-width: 768px) {
-        .contact_container .g_map {
-            padding-bottom: 35%; /* Further adjust height for mobile */
-        }
-    }
-    
-    /* For smaller mobile phones (screen width less than 480px) */
-    @media (max-width: 480px) {
-        .contact_container .g_map {
-            padding-bottom: 30%; /* Adjust for small devices */
-        }
-    }
-    
-    
-}
-
-/* For smaller mobile phones (screen width less than 480px) */
-@media (max-width: 480px) {
-    .contact_container {
-        padding: 20px;
-        height: auto;
-    }
-
-    .contact_container h2 {
-        font-size: 20px; /* Further reduce heading size for small devices */
-    }
-
-    .contact_container .contact_content p {
-        font-size: 14px;
-        line-height: 18px;
-    }
-
-    .contact_container .g_map {
-        width: 100%; /* Ensure map still fits the container */
-    }
 }
 
 /*--------------------------------------------CATERING---------------------------------------*/
