@@ -13,7 +13,7 @@ This repository contains the code for a charity website developed using HTML and
 - `index.html`: Contains the main structure of the website.
 - `styles.css`: Holds the styling for the website.
 
-
+ 
 ## Getting Started
 
 To view the website locally, follow these steps:
