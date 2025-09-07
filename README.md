@@ -15,7 +15,7 @@ This repository contains the code for a charity website developed using HTML and
 
  
 ## Getting Started 
-
+ 
 To view the website locally, follow these steps: 
 
 1. Clone the repository to your local machine:
