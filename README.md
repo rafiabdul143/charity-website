@@ -14,7 +14,7 @@ This repository contains the code for a charity website developed using HTML and
 - `styles.css`: Holds the styling for the website.   
 
  
-## Getting Started  
+## Getting Started   
  
 To view the website locally, follow these steps: 
 
