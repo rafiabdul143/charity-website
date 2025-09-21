@@ -22,3 +22,4 @@ To view the website locally, follow these steps:
    ```bash
    git clone https://github.com/yourusername/charity-website.git
  
+   
