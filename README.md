@@ -18,7 +18,7 @@ This repository contains the code for a charity website developed using HTML and
  
 To view the website locally, follow these steps: 
 
-1. Clone the repository to your local machine:   
+1. Clone the repository to your local machine:    
    ```bash
    git clone https://github.com/yourusername/charity-website.git
   
