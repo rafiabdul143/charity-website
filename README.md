@@ -1,5 +1,5 @@
            
-# Charity Website
+# Charity Website 
 
 This repository contains the code for a charity website developed using HTML and CSS. The project was aimed at gaining hands-on practice with frontend technologies while maintaining a simple and user-friendly design.
   
